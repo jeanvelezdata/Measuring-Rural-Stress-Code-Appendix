@@ -1,0 +1,62 @@
+---
+title: 'Measuring Rural Stress: Structural Equation Modelling'
+author: "Jean Velez"
+date: "2023-11-28"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+# Import Lavaan
+```{r}
+library(lavaan)
+```
+
+# Import Dataset
+```{r}
+data <- readxl::read_xlsx("Mid-Western State 5 County Stress Data.xlsx")
+```
+
+# Factorize likert items
+```{r}
+for (i in 2:5){
+data[,i] = factor(dplyr::pull(data[,i]),ordered = TRUE)
+}
+```
+
+
+# Build structual and measurement equations
+```{r}
+m <- '
+  # latent variable - measurement model
+  overallstress =~ stress + stress_finance + stress_home + stress_employment
+  
+  # structural path - structural model
+  overallstress ~ rural + hispanic + income_higher + income_lower
+  
+  #correlated error
+  stress~~stress_home
+'
+```
+
+
+# Create SEM object
+```{r}
+m.fit <- lavaan::sem(m, data = data)
+```
+
+
+# Output summary of SEM
+```{r}
+lavaan::summary(m.fit, standardized = T, fit.measures = T)
+```
