@@ -1,3 +1,3 @@
-# Measuring-Rural-Stress-Code-Appendix
+# Measuring Rural Stress Code Appendix
 Hi!
 This is a test.
