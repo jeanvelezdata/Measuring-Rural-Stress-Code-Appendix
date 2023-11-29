@@ -1058,7 +1058,7 @@ segments you will find a simplified step by step process for building
 your own structural equation model.</p>
 <p>Disclaimer: structural equation modeling is a complex area of
 statistics. Our paper is not intended to be a complete guide on this
-topic, but we hope it can serve as an introduction to the power these
+topic, rather we hope it can serve as an introduction to the power these
 tools can afford the rural mental health researcher. Those interested
 can find further readings in our bibliography.</p>
 </div>
@@ -1081,11 +1081,11 @@ which means they are actually ordered data. In a future step we should
 factorize these variables.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>httr<span class="sc">::</span><span class="fu">GET</span>(<span class="st">&quot;https://query.data.world/s/fif6xttgj4kvir4ixvnlnxdmlqhiuw?dws=00000&quot;</span>, httr<span class="sc">::</span><span class="fu">write_disk</span>(tf <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.xlsx&quot;</span>)))</span></code></pre></div>
 <pre><code>## Response [https://download.data.world/file_download/janky22/measuring-rural-stress-dataset/Mid-Western%20State%205%20County%20Stress%20Data.xlsx?auth=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9kLXVzZXItY2xpZW50Omphbmt5MjIiLCJpc3MiOiJhZ2VudDpqYW5reTIyOjpjYzEzYjg3MC02MzhhLTRiMjMtYjJiNi0xYzQ3YWZlNGUyYWIiLCJpYXQiOjE3MDEyMTA4MTQsInJvbGUiOlsidXNlciIsInVzZXJfYXBpX2FkbWluIiwidXNlcl9hcGlfZW50ZXJwcmlzZV9hZG1pbiIsInVzZXJfYXBpX3JlYWQiLCJ1c2VyX2FwaV93cml0ZSJdLCJnZW5lcmFsLXB1cnBvc2UiOmZhbHNlLCJ1cmwiOiJhNDI4MmU0ZDdiMzZlMjg0NGJjZjY3Yjk5NTg1ZDQ3ZThiYWMyZTlhIn0.r5WNYktKSxdfQRpD0p8A1Akha7v2oc_GVQK0fARnnfvJgTuCN2GQAqTN8hzJWYetVSkPh2jxr5hRj5l8qsYqpA]
-##   Date: 2023-11-29 17:13
+##   Date: 2023-11-29 17:19
 ##   Status: 200
 ##   Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 ##   Size: 19.3 kB
-## &lt;ON DISK&gt;  C:\Users\janky\AppData\Local\Temp\RtmpyuJn6B\file48d4ec5109d.xlsx</code></pre>
+## &lt;ON DISK&gt;  C:\Users\janky\AppData\Local\Temp\RtmpmAxPIl\file456c722f3424.xlsx</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(tf)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(data)</span></code></pre></div>
 <pre><code>## Rows: 251
